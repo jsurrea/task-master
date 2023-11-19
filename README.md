@@ -51,6 +51,10 @@ The project is organized into various components and files to ensure a clear and
 
 Take a look at the application deployed in [GitHub-Pages!](https://jsurrea.github.io/task-master)
 
+![image](https://github.com/jsurrea/task-master/assets/68788933/e96941d3-1789-415b-aa69-6b07c48780eb)
+![image](https://github.com/jsurrea/task-master/assets/68788933/1159ca4a-21d5-4138-b67a-6ee54c1b92a4)
+
+
 ## Components
 
 ### TodoItem
