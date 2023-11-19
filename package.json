@@ -39,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "https://jsurrea.github.io/task-master",
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
   }
 }

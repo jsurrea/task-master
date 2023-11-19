@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Task Master
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task Master is a sleek and efficient React application designed to help you manage your tasks effortlessly. Keep track of your to-dos, mark them as completed, and add new tasks seamlessly.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Demo](#demo)
+- [Components](#components)
+  - [TodoItem](#todoitem)
+  - [TodoList](#todolist)
+  - [TodoSearch](#todosearch)
+  - [TodosEmpty](#todosempty)
+  - [TodosError](#todoserror)
+  - [TodosLoading](#todosloading)
+- [Context](#context)
+  - [TodoContext](#todocontext)
+  - [TodoProvider](#todoprovider)
+- [Custom Hook](#custom-hook)
+  - [useLocalStorage](#uselocalstorage)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is organized into various components and files to ensure a clear and modular structure. Here's a brief overview:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Components: A set of React components responsible for different aspects of the application.
+- Context: Manages the state and logic related to To-Dos, providing a context for components.
+- Custom Hook: Handles local storage operations for easy data retrieval and storage.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
+4. Run `npm start` to start the development server.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Add new To-Dos.
+- Mark To-Dos as completed.
+- Delete To-Dos.
+- Search and filter To-Dos.
+- Persistent data using local storage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Take a look at the application deployed in [GitHub-Pages!](https://jsurrea.github.io/task-master)
 
-### `npm run eject`
+## Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### TodoItem
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The TodoItem component represents an individual To-Do item within the application. It features a clean design with the ability to mark tasks as completed or delete them.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### TodoList
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The TodoList component displays a scrollable list of To-Dos, providing an organized view for efficient task management.
 
-## Learn More
+### TodoSearch
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The TodoSearch component includes a user-friendly search bar, allowing users to filter tasks based on their input.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### TodosEmpty
 
-### Code Splitting
+The TodosEmpty component welcomes users with an inviting message when there are no tasks, encouraging them to start their journey with Task Master.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### TodosError
 
-### Analyzing the Bundle Size
+The TodosError component gracefully handles errors, displaying a message to inform users that something unexpected occurred.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### TodosLoading
 
-### Making a Progressive Web App
+The TodosLoading component presents a friendly loading message, keeping users informed while their data is being fetched.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Context
 
-### Advanced Configuration
+### TodoContext
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The TodoContext manages the state and logic related to To-Dos. It provides a context for components to access and modify To-Do data.
 
-### Deployment
+### TodoProvider
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The TodoProvider wraps the application with the TodoContext.Provider to supply To-Do-related data and functions to its children.
 
-### `npm run build` fails to minify
+## Custom Hook
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### useLocalStorage
+
+The useLocalStorage hook simplifies local storage operations, allowing easy retrieval and storage of data.
+
+## Usage
+
+Feel free to explore, customize, and enhance the application based on your requirements! If you have any questions or suggestions, don't hesitate to reach out.
+
+## Contributing
+
+Contributions are welcome! If you have ideas for improvements, bug fixes, or new features, please submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code.
