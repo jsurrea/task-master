@@ -1,7 +1,14 @@
+import React from "react";
+import { TodoContext } from "../TodoContext";
 import "./TodoCreate.css";
 
 function TodoCreate() {
-  return <button onClick={(event) => console.log(event.target)}>+</button>;
+  const { setOpenModal } = React.useContext(TodoContext);
+  return (
+    <button className="create" onClick={() => setOpenModal((state) => !state)}>
+      +
+    </button>
+  );
 }
 
 export { TodoCreate };
