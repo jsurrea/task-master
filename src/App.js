@@ -8,16 +8,16 @@ import { TodoCreate } from "./TodoCreate";
 import "./App.css";
 
 const defaultTodos = [
-  { text: "Tarea 1", completed: true },
-  { text: "Tarea 2", completed: false },
-  { text: "Tarea 3", completed: true },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 5", completed: false },
-  { text: "Tarea 6", completed: false },
-  { text: "Tarea 7", completed: false },
-  { text: "Tarea 8", completed: false },
-  { text: "Tarea 9", completed: false },
-  { text: "Tarea 10", completed: false },
+  { text: "Complete morning workout 🏋️‍♂️", completed: true },
+  { text: "Write project proposal 📝", completed: false },
+  { text: "Grocery shopping 🛒", completed: false },
+  { text: "Learn a new recipe 👩‍🍳", completed: false },
+  { text: "Take a hike in a nearby nature reserve 🌳", completed: false },
+  { text: "Read a chapter of a book 📖", completed: false },
+  { text: "Plan weekend activities 🗓️", completed: false },
+  { text: "Organize workspace 🗄️", completed: false },
+  { text: "Call a friend or family member 📞", completed: false },
+  { text: "Watch a documentary 📺", completed: false },
 ];
 
 function App() {
@@ -27,7 +27,23 @@ function App() {
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  console.log(searchValue);
+  const searchedTodos = todos.filter((todo) =>
+    todo.text.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  const toggleTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <>
@@ -38,11 +54,13 @@ function App() {
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onToggle={() => toggleTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
