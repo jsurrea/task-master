@@ -7,3 +7,7 @@ ul {
   display: grid;
   gap: 12px;
 }
+
+ul p {
+  text-align: center;
+}

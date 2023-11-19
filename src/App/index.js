@@ -4,8 +4,26 @@ import { AppUI } from "./AppUI";
 
 import "./App.css";
 
+const defaultTodos = [
+  { text: "Complete morning workout 🏋️‍♂️", completed: false },
+  { text: "Write project proposal 📝", completed: false },
+  { text: "Grocery shopping 🛒", completed: false },
+  { text: "Learn a new recipe 👩‍🍳", completed: false },
+  { text: "Take a hike nearby 🌳", completed: false },
+  { text: "Read a chapter of a book 📖", completed: false },
+  { text: "Plan weekend activities 🗓️", completed: false },
+  { text: "Organize workspace 🗄️", completed: false },
+  { text: "Call a family member 📞", completed: false },
+  { text: "Watch a documentary 📺", completed: false },
+];
+
 function App() {
-  const [todos, setTodos] = useLocalStorage();
+  const {
+    item: todos,
+    saveItem: setTodos,
+    loading,
+    error,
+  } = useLocalStorage("TaskMaster_ToDos_V1", defaultTodos);
   const [searchValue, setSearchValue] = React.useState("");
 
   // Sort parsedTodos such that items with completed=true come first
@@ -51,6 +69,8 @@ function App() {
       searchedTodos={searchedTodos}
       toggleTodo={toggleTodo}
       deleteTodo={deleteTodo}
+      loading={loading}
+      error={error}
     />
   );
 }
