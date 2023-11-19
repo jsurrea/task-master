@@ -1,14 +1,18 @@
 import "./TodoSearch.css";
 
-function TodoSearch() {
+function TodoSearch({ searchValue, setSearchValue }) {
   return (
-    <div class="search-container">
+    <div className="search-container">
       <input
         type="text"
-        class="search-input"
+        className="search-input"
         placeholder="Search within your tasks..."
+        value={searchValue}
+        onChange={(event) => {
+          setSearchValue(event.target.value);
+        }}
       />
-      <span class="search-icon">&#128269;</span>
+      <span className="search-icon">&#128269;</span>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -11,22 +12,30 @@ const defaultTodos = [
   { text: "Tarea 2", completed: false },
   { text: "Tarea 3", completed: true },
   { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
-  { text: "Tarea 4", completed: false },
+  { text: "Tarea 5", completed: false },
+  { text: "Tarea 6", completed: false },
+  { text: "Tarea 7", completed: false },
+  { text: "Tarea 8", completed: false },
+  { text: "Tarea 9", completed: false },
+  { text: "Tarea 10", completed: false },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log(searchValue);
+
   return (
     <>
       <h1>Task Master</h1>
 
-      <TodoCounter completed={16} total={25} />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
 
-      <TodoSearch />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {defaultTodos.map((todo) => (
