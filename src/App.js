@@ -3,19 +3,27 @@ import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { TodoCreate } from "./TodoCreate";
+
 import "./App.css";
-import React from "react";
 
 const defaultTodos = [
   { text: "Tarea 1", completed: true },
   { text: "Tarea 2", completed: false },
   { text: "Tarea 3", completed: true },
   { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
+  { text: "Tarea 4", completed: false },
 ];
 
 function App() {
   return (
-    <React.Fragment>
+    <>
+      <h1>Task Master</h1>
+
       <TodoCounter completed={16} total={25} />
 
       <TodoSearch />
@@ -31,7 +39,7 @@ function App() {
       </TodoList>
 
       <TodoCreate />
-    </React.Fragment>
+    </>
   );
 }
 

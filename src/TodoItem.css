@@ -1,0 +1,27 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #00bcd4; /* Border between items */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #e0f7fa;
+}
+
+/* Styles for the check and delete icons */
+.icon {
+  margin-right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Styles for the description */
+.description {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.completed {
+  background-color: #5f6d6d; /* Background color for completed items */
+  border-color: #00bcd4; /* Border color for completed items */
+}

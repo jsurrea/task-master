@@ -1,0 +1,26 @@
+.search-container {
+  position: relative;
+  max-width: 300px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px; /* Adjust the border-radius for curved edges */
+  border: 2px solid rgb(0, 162, 255); /* Border color */
+  outline: none; /* Remove default outline */
+  font-size: 14px;
+  padding-left: 40px; /* Space for the icon */
+  box-sizing: border-box;
+}
+
+/* Styles for the search icon */
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em; /* Adjust the font size of the icon */
+  color: #555; /* Icon color */
+}

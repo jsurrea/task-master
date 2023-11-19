@@ -1,0 +1,9 @@
+ul {
+  height: 500px;
+  overflow-y: scroll;
+  margin: 15px;
+  height: calc(100vh - 290px);
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
